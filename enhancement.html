@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <style> 
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #eef2f3; padding: 40px; } 
+        .device-card { 
+            background: #ffffff; 
+            max-width: 350px; 
+            margin: auto; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1); 
+            padding: 20px; 
+            border-left: 8px solid #4facfe; 
+        } 
+        .status-badge { 
+            display: inline-block; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            background: #d1fae5; 
+            color: #065f46; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+        } 
+        .info { margin-top: 15px; color: #444; } 
+        .code-preview { 
+            background: #2d3436; 
+            color: #fab1a0; 
+            padding: 10px; 
+            font-family: monospace; 
+            border-radius: 5px; 
+            font-size: 0.85rem; 
+            margin-top: 15px; 
+        } 
+    </style> 
+</head> 
+<body> 
+<div class="device-card"> 
+    <span class="status-badge" id="statusBadge"></span> 
+    <h2 id="deviceName" style="margin: 10px 0;"></h2> 
+    <div class="info" id="deviceDetails"></div> 
+    <div class="code-preview"> 
+       <br> 
+        const device = { name, type, status }; 
+    </div> 
+</div> 
+<script> 
+    const name = "Living Room Hub"; 
+    const type = "Smart Speaker"; 
+    const status = "Online"; 
+    const smartDevice = {  
+        name,  
+        type,  
+        status, 
+        summarize() { 
+            return `${this.name} is a ${this.type}.`; 
+        } 
+    }; 
+    document.getElementById('deviceName').innerText = smartDevice.name; 
+    document.getElementById('statusBadge').innerText = smartDevice.status; 
+    document.getElementById('deviceDetails').innerText = smartDevice.summarize(); 
+</script> 
+</body> 
+</html> 
