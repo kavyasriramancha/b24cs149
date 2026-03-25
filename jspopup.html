@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            JavaScript popup Boxes
+        </title>
+        <script>
+            function showAlert(){
+                alert("This is an alert Box!");
+            }
+            function showConfirm(){
+                var result=confirm("Do you want to continue?");
+                if(result){
+                    document.getElementById("output").innerHTML="You clicked OK";
+                }else{
+                    document.getElementById("output").innerHTML="You clicked Cancel";
+                }
+            }
+            function showPrompt(){
+                var name=prompt("Enter your name: ");
+                if(name!=null){
+                    document.getElementById("output").innerHTML="you name: "+name;
+                }
+                else{
+                    document.getElementById("output").innerHTML="User cancel";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>JavaScript popup boxes</h2>
+        <button onclick="showAlert()">Show alert</button><br><br>
+        <button onclick="showConfirm()">Show confirmation </button><br><br>
+        <button onclick="showPrompt()">Show prompt</button><br><br>
+        <p id="output"></p>
+    </body>
+</html>
